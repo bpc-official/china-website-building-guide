@@ -1,2 +1,47 @@
 # china-website-building-guide
 A comprehensive architecture &amp; best practices guide for building and hosting websites for Mainland China users.
+# China Website Hosting: 2 Proven Architecture Strategies
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/bpc-official/china-website-building-guide/pulls)
+[![Maintained by BPC](https://img.shields.io/badge/Maintained%20by-BPC%20Agency-1B448C)](https://www.baiduppc.com)
+
+A comprehensive infrastructure decision matrix for engineering, deploying, and optimizing web applications targeting users in Mainland China.
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Architecture Decision Flow](#architecture-decision-flow)
+- [Comparison Matrix](#comparison-matrix)
+- [Core Architecture Strategies](#core-architecture-strategies)
+  - [1. Mainland China Nodes (Full Compliance)](#1-mainland-china-nodes-full-compliance)
+  - [2. Hong Kong Near-Border Nodes (Zero-ICP Fast Launch)](#2-hong-kong-near-border-nodes-zero-icp-fast-launch)
+- [Technical Audit Checklist](#technical-audit-checklist)
+- [Contributing](#contributing)
+- [References & Acknowledgements](#references--acknowledgements)
+
+---
+
+## Overview
+
+Deploying web infrastructure for Mainland China depends primarily on one operational and legal prerequisite: **Do you hold a registered business entity in Mainland China?**
+
+Unlike Western markets where server geographic placement is mostly an issue of minor edge latency, serving content inside China's network ecosystem involves navigating the **Great Firewall (GFW)** and telecommunications compliance mandates enforced by the **Ministry of Industry and Information Technology (MIIT)**.
+
+---
+
+## Architecture Decision Flow
+
+Use the decision path below to determine your production deployment model:
+
+```text
+                       [ Mainland Legal Entity? ]
+                              /          \
+                        (Yes)              (No)
+                          /                  \
+        [ Mainland China Nodes ]      [ Hong Kong Near-Border ]
+        * Mandatory ICP Filing        * Zero ICP Required
+        * Ultra-low Latency           * Direct BGP / CN2 GIA
+        * Maximum Baidu SEO Weight    * Fast Cross-border Transit
